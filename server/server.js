@@ -26,5 +26,4 @@ pool.query("SELECT NOW()", (err, res) => {
   } else {
     console.log("Connection successful:", res.rows);
   }
-  pool.end();
 });
