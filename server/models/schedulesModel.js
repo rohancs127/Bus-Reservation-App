@@ -1,4 +1,3 @@
-// models/schedulesModel.js
 const pool = require("../db");
 
 const ScheduleModel = {

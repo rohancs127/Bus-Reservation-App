@@ -1,4 +1,3 @@
-// models/busesModel.js
 const pool = require("../db");
 
 const BusModel = {

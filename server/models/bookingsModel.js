@@ -1,4 +1,3 @@
-// models/bookingsModel.js
 const pool = require("../db");
 
 const BookingModel = {
