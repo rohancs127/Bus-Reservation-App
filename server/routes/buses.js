@@ -1,15 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db");
+const BusController = require("../controllers/busesController");
 
-router.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM buses");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
+// POST request to create a new bus
+router.post("/", BusController.createBus);
+
+// GET request to fetch all buses
+router.get("/", BusController.getAllBuses);
+
+// GET request to fetch a bus by ID
+router.get("/:bus_id", BusController.getBusById);
+
+// PUT request to update a bus
+router.put("/:bus_id", BusController.updateBus);
+
+// DELETE request to delete a bus
+router.delete("/:bus_id", BusController.deleteBus);
 
 module.exports = router;

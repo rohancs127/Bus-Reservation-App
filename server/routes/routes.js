@@ -1,32 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db");
+const RouteController = require("../controllers/routesController");
 
-router.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM routes");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
+// POST request to create a new route
+router.post("/", RouteController.createRoute);
 
-router.get("/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const result = await pool.query(
-      "SELECT * FROM routes WHERE route_id = $1",
-      [id]
-    );
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: "Route not found" });
-    }
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
+// GET request to fetch all routes
+router.get("/", RouteController.getAllRoutes);
+
+// GET request to fetch a route by ID
+router.get("/:route_id", RouteController.getRouteById);
+
+// PUT request to update a route
+router.put("/:route_id", RouteController.updateRoute);
+
+// DELETE request to delete a route
+router.delete("/:route_id", RouteController.deleteRoute);
 
 module.exports = router;

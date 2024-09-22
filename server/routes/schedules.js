@@ -1,32 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db");
+const ScheduleController = require("../controllers/schedulesController");
 
-router.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM schedules");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
+// POST request to create a new schedule
+router.post("/", ScheduleController.createSchedule);
 
-router.get("/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const result = await pool.query(
-      "SELECT * FROM schedules WHERE schedule_id = $1",
-      [id]
-    );
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: "Schedule not found" });
-    }
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
+// GET request to fetch all schedules
+router.get("/", ScheduleController.getAllSchedules);
+
+// GET request to fetch a schedule by ID
+router.get("/:schedule_id", ScheduleController.getScheduleById);
+
+// PUT request to update a schedule
+router.put("/:schedule_id", ScheduleController.updateSchedule);
+
+// DELETE request to delete a schedule
+router.delete("/:schedule_id", ScheduleController.deleteSchedule);
 
 module.exports = router;
