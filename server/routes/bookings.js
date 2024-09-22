@@ -18,7 +18,7 @@ router.get("/user/:userId", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { user_id, schedule_id, seat_number, status } = req.body;
+    const { user_id, schedule_id, seat_number, status = "pending" } = req.body;
     const newBooking = await pool.query(
       "INSERT INTO bookings (user_id, schedule_id, seat_number, status) VALUES ($1, $2, $3, $4) RETURNING *",
       [user_id, schedule_id, seat_number, status]
