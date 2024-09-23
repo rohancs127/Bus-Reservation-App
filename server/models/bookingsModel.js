@@ -9,8 +9,11 @@ const BookingModel = {
     return result.rows[0];
   },
 
-  getAllBookings: async () => {
-    const result = await pool.query("SELECT * FROM bookings");
+  getAllBookings: async (user_id) => {
+    const result = await pool.query(
+      "SELECT b.booking_id, b.user_id, b.seat_number, b.booking_date, b.status, s.schedule_id, s.arrival_time, s.departure_time, buses.bus_number, routes.source, routes.destination FROM bookings b JOIN schedules s ON b.schedule_id = s.schedule_id JOIN buses ON s.bus_id = buses.bus_id JOIN routes ON s.route_id = routes.route_id WHERE b.user_id = $1;",
+      [user_id]
+    );
     return result.rows;
   },
 

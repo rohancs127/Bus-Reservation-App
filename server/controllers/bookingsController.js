@@ -34,8 +34,12 @@ const BookingController = {
   },
 
   getAllBookings: async (req, res) => {
+    const { user_id } = req.params;
     try {
-      const bookings = await BookingModel.getAllBookings();
+      const bookings = await BookingModel.getAllBookings(user_id);
+      if (!bookings) {
+        return res.status(404).json({ message: "Booking not found" });
+      }
       res.json(bookings);
     } catch (error) {
       console.error(error.message);

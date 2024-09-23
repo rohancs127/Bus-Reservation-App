@@ -37,7 +37,7 @@ const AuthController = {
       }
 
       const token = jwt.sign(
-        { user: { email: user.email } },
+        { user: { id: user.user_id, email: user.email } },
         process.env.JWT_SECRET,
         { expiresIn: "1h" }
       );
@@ -49,7 +49,6 @@ const AuthController = {
   },
 
   logout: (req, res) => {
-    // Logic to handle logout (if needed)
     res.status(200).json({ message: "Logged out successfully" });
   },
 };
