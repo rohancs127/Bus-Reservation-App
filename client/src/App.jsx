@@ -7,6 +7,7 @@ import RoutesPage from './components/RoutesPage';
 import Login from './components/Login';
 import Bookings from './components/Bookings';
 import Register from './components/Register';
+import CreateBooking from './components/CreateBooking';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,6 +26,7 @@ function App() {
           element={isLoggedIn ? <Bookings /> : <Navigate to="/login" />} 
         />
         <Route path="/register" element={<Register />} />
+        <Route path="/bookings/createBooking" element={<CreateBooking />} />
       </Routes>
     </Router>
   );

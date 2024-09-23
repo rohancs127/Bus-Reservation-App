@@ -1,10 +1,10 @@
 const pool = require("../db");
 
 const BookingModel = {
-  createBooking: async (user_id, schedule_id, seat_number) => {
+  createBooking: async (user_id, schedule_id, seat_number, status) => {
     const result = await pool.query(
-      "INSERT INTO bookings (user_id, schedule_id, seat_number) VALUES ($1, $2, $3) RETURNING *",
-      [user_id, schedule_id, seat_number]
+      "INSERT INTO bookings (user_id, schedule_id, seat_number, status) VALUES ($1, $2, $3, $4) RETURNING *",
+      [user_id, schedule_id, seat_number, status]
     );
     return result.rows[0];
   },

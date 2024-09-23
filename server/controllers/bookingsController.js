@@ -3,7 +3,7 @@ const ScheduleModel = require("../models/schedulesModel");
 
 const BookingController = {
   createBooking: async (req, res) => {
-    const { user_id, schedule_id, seat_number } = req.body;
+    const { user_id, schedule_id, seat_number, status } = req.body;
 
     try {
       const schedule = await ScheduleModel.getScheduleById(schedule_id);
@@ -22,7 +22,8 @@ const BookingController = {
       const newBooking = await BookingModel.createBooking(
         user_id,
         schedule_id,
-        seat_number
+        seat_number,
+        status
       );
       await ScheduleModel.decreaseAvailableSeats(schedule_id);
 

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useNavigate } from 'react';
 import axios from 'axios';
 import { formatDate } from '../scripts/formatDate';
+import { Link } from 'react-router-dom';
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -38,6 +39,7 @@ const Bookings = () => {
 
   return (
     <div>
+      <div><Link to="createBooking">Book A Bus</Link></div>
       <h2>Your Bookings</h2>
       {bookings.length === 0 ? (
         <p>No bookings found.</p>
