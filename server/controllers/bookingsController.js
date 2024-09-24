@@ -1,3 +1,4 @@
+const pool = require("../db");
 const BookingModel = require("../models/bookingsModel");
 const ScheduleModel = require("../models/schedulesModel");
 
@@ -7,11 +8,22 @@ const BookingController = {
 
     try {
       const schedule = await ScheduleModel.getScheduleById(schedule_id);
+      console.log({ schedule });
 
-      if (seat_number > schedule.capacity) {
+      const bus = await pool.query(
+        "SELECT capacity FROM buses WHERE bus_id = $1",
+        [schedule.bus_id]
+      );
+
+      if (seat_number > bus.rows[0].capacity) {
         return res
           .status(400)
           .json({ message: "Seat number exceeds bus capacity." });
+      }
+      if (seat_number <= 0) {
+        return res
+          .status(400)
+          .json({ message: "Please type a seat number above 0" });
       }
       if (schedule.available_seats <= 0) {
         return res
@@ -65,12 +77,38 @@ const BookingController = {
 
   updateBooking: async (req, res) => {
     const { booking_id } = req.params;
-    const { seat_number } = req.body;
+    const { seat_number, status, schedule_id } = req.body;
+
+    console.log({ seat_number, status, schedule_id });
 
     try {
+      const schedule = await ScheduleModel.getScheduleById(schedule_id);
+      console.log({ schedule });
+
+      const bus = await pool.query(
+        "SELECT capacity FROM buses WHERE bus_id = $1",
+        [schedule.bus_id]
+      );
+
+      if (seat_number > bus.rows[0].capacity) {
+        return res
+          .status(400)
+          .json({ message: "Seat number exceeds bus capacity." });
+      }
+      if (seat_number <= 0) {
+        return res
+          .status(400)
+          .json({ message: "Please type a seat number above 0" });
+      }
+      if (schedule.available_seats <= 0) {
+        return res
+          .status(400)
+          .json({ message: "No available seats on this bus." });
+      }
       const updatedBooking = await BookingModel.updateBooking(
         booking_id,
-        seat_number
+        seat_number,
+        status
       );
       if (!updatedBooking) {
         return res.status(404).json({ message: "Booking not found" });

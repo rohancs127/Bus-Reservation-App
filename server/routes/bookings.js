@@ -9,7 +9,7 @@ router.post("/", BookingController.createBooking);
 router.get("/:user_id", BookingController.getAllBookings);
 
 // GET request to fetch a booking by ID
-router.get("/:booking_id", BookingController.getBookingById);
+router.get("/booking/:booking_id", BookingController.getBookingById);
 
 // PUT request to update a booking
 router.put("/:booking_id", BookingController.updateBooking);

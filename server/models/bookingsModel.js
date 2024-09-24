@@ -25,10 +25,10 @@ const BookingModel = {
     return result.rows[0];
   },
 
-  updateBooking: async (booking_id, seat_number) => {
+  updateBooking: async (booking_id, seat_number, status) => {
     const result = await pool.query(
-      "UPDATE bookings SET seat_number = $1 WHERE booking_id = $2 RETURNING *",
-      [seat_number, booking_id]
+      "UPDATE bookings SET seat_number = $1, status = $2 WHERE booking_id = $3 RETURNING *",
+      [seat_number, status, booking_id]
     );
     return result.rows[0];
   },

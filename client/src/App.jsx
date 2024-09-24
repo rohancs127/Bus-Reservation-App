@@ -8,6 +8,8 @@ import Login from './components/Login';
 import Bookings from './components/Bookings';
 import Register from './components/Register';
 import CreateBooking from './components/CreateBooking';
+import EditBooking from './components/EditBooking';
+import DeleteBooking from './components/DeleteBooking';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,6 +29,8 @@ function App() {
         />
         <Route path="/register" element={<Register />} />
         <Route path="/bookings/createBooking" element={<CreateBooking />} />
+        <Route path="/editBooking/:booking_id" element={<EditBooking />} />
+        <Route path="/deleteBooking/:booking_id" element={<DeleteBooking />} />
       </Routes>
     </Router>
   );
