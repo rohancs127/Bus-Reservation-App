@@ -1,0 +1,80 @@
+/* create-booking.css */
+
+/* Main container for the booking form page */
+.create-booking-page-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  /* Heading style */
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1e272e;
+    text-align: center;
+  }
+  
+  /* Form container */
+  .create-booking-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Input fields */
+  .create-booking-block input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ced6e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focused input fields */
+  .create-booking-block input:focus {
+    border-color: #ff6a6a;
+  }
+  
+  /* Submit button */
+  .create-booking-block button {
+    padding: 12px;
+    background-color: #ff5656;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .create-booking-block button:hover {
+    background-color: #bb3f3f;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 500px) {
+    .create-booking-block {
+      padding: 20px;
+    }
+  
+    .create-booking-block input {
+      font-size: 0.9rem;
+    }
+  
+    .create-booking-block button {
+      font-size: 1rem;
+    }
+  }
+  

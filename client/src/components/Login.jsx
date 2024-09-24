@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/login.css';
+
 
 const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
@@ -32,9 +34,9 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+    <div className='login-page-div'>
+      <h2 className='heading'>User login</h2>
+      <form onSubmit={handleLogin} className='login-block'>
         <input
           type="email"
           placeholder="Email"
@@ -54,7 +56,7 @@ const Login = ({ setIsLoggedIn }) => {
 
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
 
-      <div>
+      <div className='new-register'>
         <p>New user? <strong><Link to="/register">Register</Link></strong></p>
       </div>
     </div>

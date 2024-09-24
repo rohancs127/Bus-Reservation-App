@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import '../styles/editBooking.css'
 
 const EditBooking = () => {
   const { booking_id } = useParams(); // Fetch the booking ID from the URL
@@ -58,9 +59,9 @@ const EditBooking = () => {
   }
 
   return (
-    <div>
-      <h2>Edit Booking</h2>
-      <form onSubmit={handleUpdateBooking}>
+    <div className="edit-booking-div">
+      <h2 className="heading">Edit Booking</h2>
+      <form className="edit-booking-block" onSubmit={handleUpdateBooking}>
         <div>
           <label>Seat Number:</label>
           <input
@@ -77,7 +78,7 @@ const EditBooking = () => {
             onChange={(e) => setStatus(e.target.value)}
           />
         </div>
-        <button type="submit">Update Booking</button>
+        <button type="submit">Update</button>
       </form>
     </div>
   );

@@ -1,0 +1,103 @@
+/* login.css */
+
+/* Main container for the login page */
+.login-page-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f1f2f6;
+    padding: 20px;
+    margin-left: 100px;
+  }
+  
+  /* Heading style */
+  .heading {
+    font-size: 2.5rem;
+    color: #2f3542;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Form styling */
+  .login-block {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Input fields */
+  input[type="email"], 
+  input[type="password"] {
+    width: 90%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ced6e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    transition: border 0.2s ease;
+  }
+  
+  /* Input focus effect */
+  input[type="email"]:focus, 
+  input[type="password"]:focus {
+    border: 1px solid #ff6a6a;
+    outline: none;
+  }
+  
+  /* Submit button styling */
+  button[type="submit"] {
+    background-color: #ff5656;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+  }
+  
+  /* Hover effect for the login button */
+  button[type="submit"]:hover {
+    background-color: #bb3f3f;
+  }
+  
+  /* Error message styling */
+  .error-msg {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* New register section */
+  .new-register {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .new-register p {
+    font-size: 1rem;
+    color: #2f3542;
+  }
+  
+  /* Register link styling */
+  .new-register a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  
+  .new-register a:hover {
+    text-decoration: underline;
+  }
+  

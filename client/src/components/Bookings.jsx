@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { formatDate } from "../scripts/formatDate";
 import { Link } from "react-router-dom";
+import '../styles/bookings.css'
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -43,41 +44,43 @@ const Bookings = () => {
   };
   const handleDeleteClick = async (bookingId) => {
     navigate(`/deleteBooking/${bookingId}`);
-  }
+  };
   if (error) {
     return <div>{error}</div>;
   }
 
   return (
-    <div>
-      <div>
+    <div className="bookings-page-div">
+      <h2 className="heading">Your Bookings</h2>
+
+      <button className="book-a-bus">
         <Link to="createBooking">Book A Bus</Link>
-      </div>
-      <h2>Your Bookings</h2>
+      </button>
+
       {bookings.length === 0 ? (
         <p>No bookings found.</p>
       ) : (
-        <ul>
+        <div className="bookings-block">
           {bookings.map((booking) => (
-            <li key={booking.booking_id}>
-              <p>Booking ID: {booking.booking_id}</p>
-              <p>Bus Number: {booking.bus_number}</p>
-              <p>Seat: {booking.seat_number}</p>
-              <p>Source: {booking.source}</p>
-              <p>Destination: {booking.destination}</p>
-              <p>Date of Booking: {formatDate(booking.booking_date)}</p>
-              <p>Departure: {formatDate(booking.departure_time)}</p>
-              <p>Arrival: {formatDate(booking.arrival_time)}</p>
-              <p>Status: {booking.status}</p>
-              <button onClick={() => handleEditClick(booking.booking_id)}>
+            <div key={booking.booking_id}>
+              <div className="bookings-content" id="source">Source: {booking.source}</div>
+              <div className="bookings-content" id="destination">Destination: {booking.destination}</div>
+              <div className="bookings-content">Booking ID: {booking.booking_id}</div>
+              <div className="bookings-content">Bus Number: {booking.bus_number}</div>
+              <div className="bookings-content">Seat Number: {booking.seat_number}</div>
+              <div className="bookings-content">Date of Booking: {formatDate(booking.booking_date)}</div>
+              <div className="bookings-content">Departure: {formatDate(booking.departure_time)}</div>
+              <div className="bookings-content">Arrival: {formatDate(booking.arrival_time)}</div>
+              <div className="bookings-content">Status: {booking.status}</div>
+              <button className="bookings-button" onClick={() => handleEditClick(booking.booking_id)}>
                 Edit
               </button>
-              <button onClick={() => handleDeleteClick(booking.booking_id)}>
+              <button className="bookings-button" onClick={() => handleDeleteClick(booking.booking_id)}>
                 Delete
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

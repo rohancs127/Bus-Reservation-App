@@ -1,0 +1,60 @@
+/* navbar.css */
+
+/* Main container for the sidebar-style navbar */
+.navbar {
+    width: 250px;
+    background-color: #db3838;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 200px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Navbar item styling */
+  .navbar-item {
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Link styles */
+  .navbar-item a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+  }
+  
+  /* Hover effect for navbar items */
+  .navbar-item a:hover {
+    background-color: #b53030;
+  }
+  
+  /* Active/Selected navbar item (when clicked) */
+  .navbar-item .active {
+    background-color: #b53030;
+    
+  }
+  
+  /* Responsive hover effect on all buttons */
+  .navbar-item a:focus,
+  .navbar-item a:active {
+    background-color: #b53030;
+    outline: none;
+  }
+  
+  /* Logout button styling */
+  .navbar-item a.logout:hover {
+    background-color: #c0392b;
+  }
+  

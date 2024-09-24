@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import '../styles/navbar.css'
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
@@ -12,34 +13,34 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <nav>
-      <ul>
-        <li>
+      <div className="navbar">
+        <div className="navbar-item">
           <Link to="/schedules">Schedules</Link>
-        </li>
-        <li>
+        </div>
+        <div className="navbar-item">
           <Link to="/buses">Buses</Link>
-        </li>
-        <li>
+        </div>
+        <div className="navbar-item">
           <Link to="/routes">Routes</Link>
-        </li>
+        </div>
 
         {isLoggedIn && (
-          <li>
+          <div className="navbar-item">
             <Link to="/bookings">Bookings</Link>
-          </li>
+          </div>
         )}
 
         {isLoggedIn ? (
-          <li>
+          <div className="navbar-item">
             <Link to="/login" onClick={handleLogout}>Logout</Link>
-          </li>
+          </div>
         ) : (
-          <li>
+          <div className="navbar-item">
             <Link to="/login">Login</Link>
-          </li>
+          </div>
         )}
         
-      </ul>
+      </div>
     </nav>
   );
 };

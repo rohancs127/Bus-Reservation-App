@@ -1,0 +1,88 @@
+/* register.css */
+
+/* Main container for the register page */
+.register-page-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f1f2f6;
+    padding: 20px;
+    margin-left: 100px;
+  }
+  
+  /* Heading style */
+  h2 {
+    font-size: 2.5rem;
+    color: #2f3542;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Form styling */
+  .register-block {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Input fields */
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"] {
+    width: 90%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ced6e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    transition: border 0.2s ease;
+  }
+  
+  /* Input focus effect */
+  input[type="text"]:focus, 
+  input[type="email"]:focus, 
+  input[type="password"]:focus {
+    border: 1px solid #ff6a6a;;
+    outline: none;
+  }
+  
+  /* Submit button styling */
+  button[type="submit"] {
+    background-color: #ff5656;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Hover effect for the register button */
+  button[type="submit"]:hover {
+    background-color: #bb3f3f;
+  }
+  
+  /* Success and error message styling */
+  p {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  p[style="color: green;"] {
+    color: #2ed573;
+  }
+  
+  p[style="color: red;"] {
+    color: #ff4757;
+  }
+  

@@ -1,0 +1,71 @@
+/* buses.css */
+
+/* Main container for the bus page */
+.bus-page-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px; /* Adjust to account for the navbar */
+    padding: 20px;
+  }
+  
+  /* Page heading */
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1e272e;
+    text-align: center;
+  }
+  
+  /* Container for each bus block */
+  .bus-page-div > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Individual bus block/card */
+  .bus-page-div > div > div {
+    background-color: #f5f6fa;
+    border-radius: 10px;
+    border: 1px solid #dcdde1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    text-align: left;
+  }
+  
+  /* Heading (Bus Number) styling */
+  .buses-content#bus-number {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Styling for each bus detail */
+  .buses-content {
+    font-size: 1.3rem;
+    color: #353b48;
+    margin-bottom: 10px;
+  }
+  
+  /* Hover effect for bus cards */
+  .bus-page-div > div > div:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Error message */
+  .error-msg {
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  

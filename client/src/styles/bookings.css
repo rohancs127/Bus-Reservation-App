@@ -1,0 +1,117 @@
+/* bookings.css */
+
+/* Main container for the bookings page */
+.bookings-page-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+  }
+  
+  /* Heading style */
+  .heading {
+    font-size: 2.2rem;
+    color: #2f3542;
+    margin-bottom: 20px;
+  }
+  
+  /* Book A Bus button styling */
+  .book-a-bus {
+    margin-bottom: 30px;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+  }
+  
+  .book-a-bus:hover {
+    background-color: #3742fa;
+  }
+  
+  .book-a-bus a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Bookings block styling */
+  .bookings-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .bookings-block div{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px black;
+  }
+  
+  /* Individual booking styled like a ticket */
+  .bookings-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  #source,
+  #destination {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2f3542;
+    background-color: #feb5b5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Buttons styling inside each booking */
+  .bookings-button {
+    bottom: 15px;
+    background-color: #ffa502;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin-left: 10px;
+    width: 100px;
+  }
+  
+  .bookings-button:hover {
+    background-color: #e67e22;
+  }
+  
+  /* Edit button aligned to the left */
+  .bookings-button:first-of-type {
+    left: 15px;
+  }
+  
+  /* Delete button aligned to the right */
+  .bookings-button:last-of-type {
+    right: 15px;
+  }
+  
+  /* Status messages */
+  p {
+    font-size: 1rem;
+    text-align: center;
+    color: #2f3542;
+    margin-top: 10px;
+  }
+  

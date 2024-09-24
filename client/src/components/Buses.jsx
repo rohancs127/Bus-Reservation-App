@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/buses.css'
 
 const Buses = () => {
   const [buses, setBuses] = useState([]);
@@ -22,18 +23,18 @@ const Buses = () => {
   }
 
   return (
-    <div>
-      <h1>Bus List</h1>
-      <ul>
+    <div className='bus-page-div'>
+      <h1 className='heading'>Buses</h1>
+      <div>
         {buses.map((bus) => (
-          <ul key={bus.bus_id}>
-            <h4>Bus Number: {bus.bus_number}</h4> 
-            <p> Capacity: {bus.capacity}</p> 
-            <p> Type: {bus.type}</p>  
-            <p> Current status: {bus.status}</p>  
-          </ul>
+          <div key={bus.bus_id}>
+            <div className='buses-content' id='bus-number'>Bus Number: {bus.bus_number}</div> 
+            <div className='buses-content'> <strong>Capacity:</strong> {bus.capacity}</div> 
+            <div className='buses-content'> <strong>Type:</strong> {bus.type}</div>  
+            <div className='buses-content'> <strong>Current status:</strong> {bus.status}</div>  
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
