@@ -1,6 +1,4 @@
-/* navbar.css */
 
-/* Main container for the sidebar-style navbar */
 .navbar {
     width: 250px;
     background-color: #db3838;
@@ -18,13 +16,11 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  /* Navbar item styling */
   .navbar-item {
     margin: 0;
     text-align: center;
   }
   
-  /* Link styles */
   .navbar-item a {
     color: #ecf0f1;
     text-decoration: none;
@@ -35,25 +31,21 @@
 
   }
   
-  /* Hover effect for navbar items */
   .navbar-item a:hover {
     background-color: #b53030;
   }
   
-  /* Active/Selected navbar item (when clicked) */
   .navbar-item .active {
     background-color: #b53030;
     
   }
   
-  /* Responsive hover effect on all buttons */
   .navbar-item a:focus,
   .navbar-item a:active {
     background-color: #b53030;
     outline: none;
   }
   
-  /* Logout button styling */
   .navbar-item a.logout:hover {
     background-color: #c0392b;
   }

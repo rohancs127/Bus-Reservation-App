@@ -7,6 +7,8 @@ const CreateBooking = ({ userId }) => {
   const [scheduleId, setScheduleId] = useState("");
   const [seatNumber, setSeatNumber] = useState("");
   const [status, setStatus] = useState("");
+  const [errorMessage, setErrorMessage] = useState(''); 
+
   const navigate = useNavigate();
 
   const handleCreateBooking = async (e) => {
@@ -31,11 +33,14 @@ const CreateBooking = ({ userId }) => {
         }
       );
 
-      // Handle success
       console.log(response.data);
       navigate('/bookings')
     } catch (error) {
-      console.error(error);
+      if (error.response && error.response.status === 400) {
+        setErrorMessage('Please enter seat number within the range');
+      } else {
+        setErrorMessage('An error occurred. Please try again.');
+      }
     }
   };
 
@@ -66,6 +71,7 @@ const CreateBooking = ({ userId }) => {
         />
         <button type="submit">Book</button>
       </form>
+      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
     </div>
   );
 };

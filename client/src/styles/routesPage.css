@@ -1,16 +1,13 @@
-/* routes.css */
 
-/* Main container for the routes page */
 .routes-page-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 250px; /* Adjust to account for the navbar */
+    margin-left: 250px; 
     padding: 20px;
   }
   
-  /* Page heading */
   .heading {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -18,7 +15,6 @@
     text-align: center;
   }
   
-  /* Container for each route block */
   .routes-block-div {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +22,6 @@
     justify-content: center;
   }
   
-  /* Individual route block/card */
   .routes-block-div > div {
     background-color: #f5f6fa;
     border-radius: 10px;
@@ -34,12 +29,11 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 320px;
     padding: 20px;
-    position: relative; /* This allows us to position route ID in the corner */
+    position: relative; 
     transition: box-shadow 0.3s ease;
     text-align: left;
   }
   
-  /* Route ID styled as a number in the top-left corner */
   .routes-content#route-id {
     font-size: 1.2rem;
     font-weight: bold;
@@ -53,19 +47,16 @@
     text-align: center;
   }
   
-  /* Styling for route details */
   .routes-content {
     font-size: 1.3rem;
     color: #2f3542;
     margin-bottom: 10px;
   }
   
-  /* Hover effect for route cards */
   .routes-block-div > div:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
-  /* Error message */
   .error-msg {
     color: red;
     font-size: 1.2rem;

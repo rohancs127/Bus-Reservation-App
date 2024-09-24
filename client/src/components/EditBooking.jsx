@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import '../styles/editBooking.css'
+import "../styles/editBooking.css";
 
 const EditBooking = () => {
-  const { booking_id } = useParams(); // Fetch the booking ID from the URL
+  const { booking_id } = useParams();
   const [booking, setBooking] = useState(null);
-  const [seatNumber, setSeatNumber] = useState(""); // Initialize with empty string
-  const [status, setStatus] = useState(""); // Initialize with empty string
+  const [seatNumber, setSeatNumber] = useState("");
+  const [status, setStatus] = useState("");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const fetchBookingDetails = async () => {
@@ -22,10 +23,10 @@ const EditBooking = () => {
         );
         const data = response.data;
         setBooking(data);
-        setSeatNumber(data.seat_number || ""); // Set default if undefined
-        setStatus(data.status || ""); // Set default if undefined
+        setSeatNumber(data.seat_number || "");
+        setStatus(data.status || "");
       } catch (error) {
-        console.error("Error fetching booking details", error);
+        setErrorMessage("Error fetching booking details", error);
       }
     };
 
@@ -48,9 +49,13 @@ const EditBooking = () => {
         }
       );
       console.log("Booking updated:", response.data);
-      navigate("/bookings"); // Redirect back to bookings page
+      navigate("/bookings");
     } catch (error) {
-      console.error("Error updating booking", error);
+      if (error.response && error.response.status === 400) {
+        setErrorMessage("Please enter seat number within the range");
+      } else {
+        setErrorMessage("An error occurred. Please try again.");
+      }
     }
   };
 
@@ -80,6 +85,7 @@ const EditBooking = () => {
         </div>
         <button type="submit">Update</button>
       </form>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
   );
 };

@@ -1,16 +1,13 @@
-/* schedules.css */
 
-/* Main container for the schedule page */
 .schedule-page-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 250px; /* Adjust according to the width of the navbar */
+    margin-left: 250px; 
     padding: 20px;
   }
   
-  /* Page heading */
   .heading {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -18,7 +15,6 @@
     text-align: center;
   }
   
-  /* Container for all schedule blocks */
   .schedule-block-div {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +22,6 @@
     justify-content: center;
   }
   
-  /* Individual schedule block/card */
   .schedule-block-div > div {
     background-color: #ecf0f1;
     border-radius: 8px;
@@ -36,8 +31,7 @@
     transition: transform 0.3s ease;
   }
   
-  /* Heading (Source to Destination) styling */
-  #source, #destination {
+  #source-schedule, #destination-schedule {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -48,21 +42,18 @@
     border-radius: 4px;
   }
   
-  /* Styling for each schedule detail */
   .schedule-content {
     font-size: 1.3rem;
     margin-bottom: 8px;
     color: #34495e;
   }
   
-  /* Error message styling */
   .error-msg {
     color: red;
     font-size: 1.2rem;
     text-align: center;
   }
   
-  /* Hover effect for schedule cards */
   .schedule-block-div > div:hover {
     transform: translateY(-5px);
   }

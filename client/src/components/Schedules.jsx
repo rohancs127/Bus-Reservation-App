@@ -31,11 +31,14 @@ const Schedules = () => {
           {schedules.map((schedule) => (
             <div key={schedule.schedule_id}>
               <div></div>
-              <div className="schedule-content" id="source">
+              <div className="schedule-content" id="source-schedule">
                 Source: {schedule.route_source}
               </div>
-              <div className="schedule-content" id="destination">
+              <div className="schedule-content" id="destination-schedule">
                 Destination: {schedule.route_destination}
+              </div>
+              <div className="schedule-content">
+                <strong>Schedule ID:</strong> {schedule.schedule_id}
               </div>
               <div className="schedule-content">
                 <strong>Bus Number:</strong> {schedule.bus_number}

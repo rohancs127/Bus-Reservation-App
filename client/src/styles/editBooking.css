@@ -1,6 +1,4 @@
-/* edit-booking.css */
 
-/* Main container for the edit booking page */
 .edit-booking-div {
     display: flex;
     flex-direction: column;
@@ -10,14 +8,12 @@
     min-height: 100vh;
   }
   
-  /* Heading style */
   .heading {
     font-size: 2.5rem;
     color: #2c3e50;
     margin-bottom: 30px;
   }
   
-  /* Form container */
   .edit-booking-block {
     display: flex;
     flex-direction: column;
@@ -30,14 +26,12 @@
     width: 100%;
   }
   
-  /* Label for input fields */
   .edit-booking-block label {
     font-size: 1rem;
     color: #34495e;
     margin-bottom: 5px;
   }
   
-  /* Input fields */
   .edit-booking-block input {
     padding: 12px;
     font-size: 1rem;
@@ -47,12 +41,10 @@
     transition: border-color 0.3s ease;
   }
   
-  /* Focused input fields */
   .edit-booking-block input:focus {
     border-color: #ff6a6a;
   }
   
-  /* Submit button */
   .edit-booking-block button {
     padding: 12px;
     background-color: #ff5656;
@@ -64,12 +56,10 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Hover effect for the button */
   .edit-booking-block button:hover {
     background-color: #bb3f3f;
   }
   
-  /* Responsive adjustments */
   @media (max-width: 500px) {
     .edit-booking-block {
       padding: 20px;

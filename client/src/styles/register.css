@@ -1,6 +1,3 @@
-/* register.css */
-
-/* Main container for the register page */
 .register-page-div {
     display: flex;
     flex-direction: column;
@@ -12,7 +9,6 @@
     margin-left: 100px;
   }
   
-  /* Heading style */
   h2 {
     font-size: 2.5rem;
     color: #2f3542;
@@ -20,7 +16,6 @@
     text-align: center;
   }
   
-  /* Form styling */
   .register-block {
     background-color: #ffffff;
     border-radius: 10px;
@@ -32,7 +27,6 @@
     flex-direction: column;
   }
   
-  /* Input fields */
   input[type="text"], 
   input[type="email"], 
   input[type="password"] {
@@ -46,7 +40,6 @@
     transition: border 0.2s ease;
   }
   
-  /* Input focus effect */
   input[type="text"]:focus, 
   input[type="email"]:focus, 
   input[type="password"]:focus {
@@ -54,7 +47,6 @@
     outline: none;
   }
   
-  /* Submit button styling */
   button[type="submit"] {
     background-color: #ff5656;
     color: white;
@@ -66,12 +58,10 @@
     transition: background-color 0.2s ease;
   }
   
-  /* Hover effect for the register button */
   button[type="submit"]:hover {
     background-color: #bb3f3f;
   }
   
-  /* Success and error message styling */
   p {
     font-size: 1rem;
     text-align: center;

@@ -1,6 +1,4 @@
-/* delete-booking.css */
 
-/* Main container for the delete booking page */
 .delete-booking-div {
     position: fixed;
     top: 50%;
@@ -15,7 +13,6 @@
     z-index: 1000;
   }
   
-  /* Overlay for background dimming */
   .overlay {
     position: fixed;
     top: 0;
@@ -26,7 +23,6 @@
     z-index: 999;
   }
   
-  /* Heading style */
   .heading {
     font-size: 1.8rem;
     color: #2f3542;
@@ -34,14 +30,12 @@
     text-align: center;
   }
   
-  /* Content section */
   .delete-booking-content {
     margin-bottom: 15px;
     font-size: 1rem;
     color: #34495e;
   }
   
-  /* Delete button */
   button {
     width: 100%;
     padding: 12px;
@@ -55,12 +49,10 @@
     margin-top: 7px;
   }
   
-  /* Hover effect for the delete button */
   button:hover {
     background-color: #c0392b;
   }
   
-  /* Responsive design */
   @media (max-width: 500px) {
     .delete-booking-div {
       padding: 20px;

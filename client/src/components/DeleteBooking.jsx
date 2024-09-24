@@ -4,13 +4,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../styles/deleteBooking.css";
 
 const DeleteBooking = () => {
-  const { booking_id } = useParams(); // Fetch the booking ID from the URL
+  const { booking_id } = useParams(); 
   const [booking, setBooking] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const token = localStorage.getItem("token"); // Retrieve token from local storage
+  const token = localStorage.getItem("token"); 
 
-  // Fetch booking details (optional, for confirmation before deletion)
   useEffect(() => {
     const fetchBookingDetails = async () => {
       try {
@@ -36,7 +35,7 @@ const DeleteBooking = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("Booking deleted successfully");
-      navigate("/bookings"); // Redirect to bookings page after deletion
+      navigate("/bookings"); 
     } catch (error) {
       console.error("Error deleting booking", error);
       setError("Failed to delete booking");
@@ -56,7 +55,7 @@ const DeleteBooking = () => {
 
   return (
     <div>
-      <div className="overlay"></div> {/* This is the dimmed background */}
+      <div className="overlay"></div> 
       <div className="delete-booking-div">
         <h2 className="heading">
           Are you sure you want to delete this booking?
