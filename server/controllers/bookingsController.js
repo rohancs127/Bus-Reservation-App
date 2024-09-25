@@ -31,6 +31,15 @@ const BookingController = {
           .json({ message: "No available seats on this bus." });
       }
 
+      const existingBooking = await pool.query(
+        'SELECT * FROM bookings WHERE schedule_id = $1 AND seat_number = $2',
+        [schedule_id, seat_number]
+      );
+  
+      if (existingBooking.rows.length > 0) {
+        return res.status(400).json({ message: 'Seat already booked for this schedule.' });
+      }
+
       const newBooking = await BookingModel.createBooking(
         user_id,
         schedule_id,
@@ -104,6 +113,24 @@ const BookingController = {
         return res
           .status(400)
           .json({ message: "No available seats on this bus." });
+      }
+
+      const existingBooking = await pool.query(
+        'SELECT * FROM bookings WHERE booking_id = $1',
+        [booking_id]
+      );
+  
+      if (existingBooking.rows.length === 0) {
+        return res.status(404).json({ message: 'Booking not found' });
+      }
+  
+      const duplicateBooking = await pool.query(
+        'SELECT * FROM bookings WHERE schedule_id = $1 AND seat_number = $2 AND booking_id != $3',
+        [schedule_id, seat_number, booking_id]
+      );
+  
+      if (duplicateBooking.rows.length > 0) {
+        return res.status(400).json({ message: 'Seat already booked for this schedule by another booking.' });
       }
       const updatedBooking = await BookingModel.updateBooking(
         booking_id,

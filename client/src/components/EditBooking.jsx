@@ -52,7 +52,7 @@ const EditBooking = () => {
       navigate("/bookings");
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        setErrorMessage("Please enter seat number within the range");
+        setErrorMessage("Please enter a valid seat number");
       } else {
         setErrorMessage("An error occurred. Please try again.");
       }
