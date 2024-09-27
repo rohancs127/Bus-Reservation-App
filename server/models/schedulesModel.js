@@ -17,7 +17,7 @@ const ScheduleModel = {
 
   getAllSchedules: async () => {
     const result = await pool.query(
-      "SELECT schedules.schedule_id AS schedule_id, buses.bus_number AS bus_number, routes.source AS route_source, routes.destination AS route_destination, schedules.departure_time, schedules.arrival_time, schedules.available_seats FROM schedules JOIN buses ON schedules.bus_id = buses.bus_id JOIN routes ON schedules.route_id = routes.route_id;"
+      "SELECT schedules.schedule_id AS schedule_id, buses.bus_number AS bus_number, routes.source AS route_source, routes.destination AS route_destination, schedules.departure_time, schedules.arrival_time, schedules.available_seats FROM schedules JOIN buses ON schedules.bus_id = buses.bus_id JOIN routes ON schedules.route_id = routes.route_id ORDER BY schedule_id;"
     );
     return result.rows;
   },

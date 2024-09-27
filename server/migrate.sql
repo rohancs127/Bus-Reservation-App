@@ -107,3 +107,5 @@ VALUES
 (8, 8, 30, '2024-09-28 16:30', 'confirmed'),
 (9, 9, 40, '2024-09-29 12:00', 'confirmed'),
 (10, 10, 19, '2024-09-30 10:45', 'confirmed');
+
+ALTER TABLE bookings ADD CONSTRAINT unique_schedule_seat UNIQUE (schedule_id, seat_number);
